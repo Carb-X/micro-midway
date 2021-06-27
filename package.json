@@ -17,12 +17,12 @@
     "@midwayjs/luckyeye": "^1.0.0",
     "@midwayjs/mock": "^2.3.0",
     "@types/jest": "^26.0.10",
-    "@types/node": "14",
+    "@types/node": "^14.11.2",
     "cross-env": "^6.0.0",
-    "mwts": "^1.0.5",
     "jest": "^26.4.0",
     "ts-jest": "^26.2.0",
-    "typescript": "^4.0.0"
+    "typescript": "^4.0.3",
+    "gts": "^3.1.0"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -34,11 +34,16 @@
     "dev": "cross-env ets && cross-env NODE_ENV=local midway-bin dev --ts",
     "test": "midway-bin test --ts",
     "cov": "midway-bin cov --ts",
-    "lint": "mwts check",
-    "lint:fix": "mwts fix",
+    "lint": "gts lint",
     "ci": "npm run cov",
     "build": "midway-bin build -c",
-    "check": "luckyeye"
+    "check": "luckyeye",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
   },
   "midway-bin-clean": [
     ".vscode/.tsbuildinfo",

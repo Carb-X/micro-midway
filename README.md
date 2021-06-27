@@ -1,5 +1,8 @@
 # micro-midway
 
+[![Code Style: Google](https://img.shields.io/badge/code%20style-google-blueviolet.svg)](https://github.com/google/gts)
+
+
 ## QuickStart
 
 <!-- add docs here for user -->

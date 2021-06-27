@@ -1,20 +1,14 @@
 {
   "compileOnSave": true,
+  "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
-    "target": "ES2018",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "rootDir": ".",
+    "outDir": "build",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "inlineSourceMap":true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "stripInternal": true,
-    "skipLibCheck": false,
-    "pretty": true,
-    "declaration": true,
     "typeRoots": [ "./typings", "./node_modules/@types"],
-    "outDir": "dist"
+    "strictPropertyInitialization": false,
+    "moduleResolution": "node"
   },
   "exclude": [
     "dist",
