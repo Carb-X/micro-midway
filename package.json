@@ -6,23 +6,22 @@
   "dependencies": {
     "@midwayjs/bootstrap": "^2.3.0",
     "@midwayjs/core": "^2.3.0",
-    "@midwayjs/web": "^2.3.0",
     "@midwayjs/decorator": "^2.3.0",
+    "@midwayjs/web": "^2.3.0",
     "egg": "^2.0.0",
-    "egg-scripts": "^2.10.0"
+    "egg-scripts": "^2.10.0",
+    "mocha": "^9.0.2"
   },
   "devDependencies": {
     "@midwayjs/cli": "^1.0.0",
     "@midwayjs/egg-ts-helper": "^1.0.1",
     "@midwayjs/luckyeye": "^1.0.0",
     "@midwayjs/mock": "^2.3.0",
-    "@types/jest": "^26.0.10",
-    "@types/node": "^14.11.2",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "14",
     "cross-env": "^6.0.0",
-    "jest": "^26.4.0",
-    "ts-jest": "^26.2.0",
-    "typescript": "^4.0.3",
-    "gts": "^3.1.0"
+    "mwts": "^1.0.5",
+    "typescript": "^4.0.0"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -33,17 +32,13 @@
     "start_build": "npm run build && cross-env NODE_ENV=development midway-bin dev",
     "dev": "cross-env ets && cross-env NODE_ENV=local midway-bin dev --ts",
     "test": "midway-bin test --ts",
+    "test:local": "cross-env ./node_modules/.bin/mocha",
     "cov": "midway-bin cov --ts",
-    "lint": "gts lint",
+    "lint": "mwts check",
+    "lint:fix": "mwts fix",
     "ci": "npm run cov",
     "build": "midway-bin build -c",
-    "check": "luckyeye",
-    "clean": "gts clean",
-    "compile": "tsc",
-    "fix": "gts fix",
-    "prepare": "npm.cmd run compile",
-    "pretest": "npm.cmd run compile",
-    "posttest": "npm.cmd run lint"
+    "check": "luckyeye"
   },
   "midway-bin-clean": [
     ".vscode/.tsbuildinfo",

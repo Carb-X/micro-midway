@@ -6,7 +6,7 @@ export default (appInfo: EggAppInfo) => {
   const config = {} as DefaultConfig;
 
   // use for cookie sign key, should change to your own and keep security
-  config.keys = appInfo.name + '_1624719204548_8132';
+  config.keys = appInfo.name + '_1626075725601_6534';
 
   // add your config here
   config.middleware = [];

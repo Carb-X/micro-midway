@@ -1,16 +1,17 @@
 import { createApp, close, createHttpRequest } from "@midwayjs/mock";
 import { Framework } from "@midwayjs/web";
 import { Application } from "egg";
+import assert = require('power-assert');
 
 describe("test/controller/api.test.ts", () => {
   let app: Application;
 
-  beforeAll(async () => {
+  before(async () => {
     // create app
     app = await createApp<Framework>();
   });
 
-  afterAll(async () => {
+  after(async () => {
     await close(app);
   });
 
@@ -20,8 +21,7 @@ describe("test/controller/api.test.ts", () => {
       .post("/api/get_user")
       .query({ uid: 123 });
 
-    // use expect by jest
-    expect(result.status).toBe(200);
-    expect(result.body.message).toBe("OK");
+    assert.equal(result.status, 200)
+    assert.equal(result.body.message, 'OK')
   });
 });
